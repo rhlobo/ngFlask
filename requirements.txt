@@ -1,0 +1,6 @@
+flask
+flask-script
+flask-restless
+flask-sqlalchemy
+sqlalchemy
+flask-migrate
