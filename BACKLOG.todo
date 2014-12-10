@@ -1,0 +1,78 @@
+#### BACKLOG
+
+## BOILERPLATE CODE
+	- Environment variable defining the environment (PRODUCTION / STAGING / DEVELOPMENT / TESTING)
+	- Point flask static_folder and template_folder to client files (build / bin)
+		- according to environment
+
+
+## Model
+	- Expense
+		- date
+		- time
+		- description
+		- amount
+		- comment(s)
+
+
+## Business
+	- Expenses CRUD (user can see, edit and delete expenses).
+	- User can filter expense list.
+	- Report (printing):
+		- expenses per week
+		- average per day in week
+		- total average per day
+		- total amount
+
+
+## Functional
+	- Authentication - web
+	- Authentication - api (auth_key)
+	- Authorization
+	- Unit Tests on the Server side (controllers, persistence, ?)
+	- Unit Tests on the Client side (?)
+	- Functional tests (REST Layer)
+
+
+## Requisites
+	- Single Page Web App
+	- Minimal UI/UX design
+	- REST API (all user actions via the API, including auth)
+
+
+## Documentation
+	- Directory structure
+	- Usage instructions
+	- Deployment
+		- Production
+		- Staging
+	- Develoment
+		- Installation
+		- Compiling
+		- Testing
+	- Clean up the ngbp README
+
+
+## Business Bonus
+	-? Social login
+	-? Share expense
+
+
+## Other bonus
+	- Responsive (present it first as a mobile app)
+	- Docker container serving the app (using Nging + static cache / uWSGI)
+	- manage.py script with commands:
+	    - Run server / client in development mode
+	    - Prepare the database
+	    - Create test data
+	    - Create inittial data
+	    - Reset the database
+	    - CRUD on databse
+	    - Backup data?
+	- api help (displaying auth_key)
+	- api client for python / shell
+	- api client general help
+	- Confirmation e-mail
+	- Forgot password
+	-? Keyboard navigation (navigation, selection, edition)
+	-? Search expense
