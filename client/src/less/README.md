@@ -23,6 +23,3 @@ an accompanying template and style, we would similarly import it:
 
 Using this decentralized approach for all our code (JavaScript, HTML, and CSS) creates a framework where a
 component's directory can be dragged and dropped into *any other project* and it will "just work".
-
-I would like to eventually automate the importing during the build so that manually importing it here would no
-longer be required, but more thought must be put in to whether this is the best approach.

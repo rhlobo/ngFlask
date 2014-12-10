@@ -1,6 +1,6 @@
-# [ngBoilerplate](http://joshdmiller.github.com/ng-boilerplate) [![Build Status](https://api.travis-ci.org/ngbp/ngbp.png?branch=v0.3.2-release)](https://travis-ci.org/ngbp/ngbp)
+# Client
 
-An opinionated kickstarter for [AngularJS](http://angularjs.org) projects.
+Web client was based on [ngBoilerplate](http://joshdmiller.github.com/ng-boilerplate), an opinionated kickstarter for [AngularJS](http://angularjs.org) projects.
 
 ***
 
@@ -9,61 +9,16 @@ An opinionated kickstarter for [AngularJS](http://angularjs.org) projects.
 Install Node.js and then:
 
 ```sh
-$ git clone git://github.com/joshdmiller/ng-boilerplate
-$ cd ng-boilerplate
 $ sudo npm -g install grunt-cli karma bower
 $ npm install
 $ bower install
 $ grunt watch
 ```
 
-Finally, open `file:///path/to/ng-boilerplate/build/index.html` in your browser.
+Finally, open `file:///path/to/build/index.html` in your browser.
 
 Happy hacking!
 
-## Purpose
-
-`ngBoilerplate` is designed to make life easy by providing a basic framework
-with which to kickstart AngularJS projects. It contains a best-practice
-directory structure to ensure code reusability and maximum scalability.
-ngBoilerplate also comes prepackaged with the most popular design frameworks
-around: [Twitter Bootstrap](http://getbootstrap.com),
-[Angular UI](http://angular-ui.github.io),
-[Angular Bootstrap](http://angular-ui.github.io/bootstrap),
-[Font Awesome](http://fortawesome.github.com/Font-Awesome), and
-[LESS](http://lesscss.org). Lastly, it contains a sophisticated
-[Grunt](http://gruntjs.org)-based build system to ensure maximum productivity.
-All you have to do is clone it and start coding!
-
-## Philosophy
-
-The principal goal of `ngBoilerplate` is to set projects up for long-term
-success.  So `ngBoilerplate` tries to follow best practices everywhere it can.
-These are:
-
-- Properly orchestrated modules to encourage drag-and-drop component re-use.
-- Tests exist alongside the component they are testing with no separate `test`
-  directory required; the build process should be sophisticated enough to handle
-  this.
-- Speaking of which, the build system should work automagically, without
-  involvement from the developer. It should do what needs to be done, while
-  staying out of the way. Components should end up tested, linted, compiled,
-  and minified, ready for use in a production environment.
-- Integration with popular tools like Bower, Karma, and LESS.
-- *Encourages* test-driven development. It's the only way to code.
-- A directory structure that is cogent, meaningful to new team members, and
-  supporting of the above points.
-- Well-documented, to show new developers *why* things are set up the way they
-  are.
-- It should be responsive to evidence. Community feedback is therefore crucial
-  to the success of `ngBoilerplate`.
-
-But `ngBoilerplate` is not an example of an AngularJS app: this is a
-kickstarter. If you're looking for an example of what a complete, non-trivial
-AngularJS app that does something real looks like, complete with a REST backend
-and authentication and authorization, then take a look at
-[`angular-app`](http://github.com/angular-app/angular-app), which does just
-that - and does it well.
 
 ## Learn
 
@@ -339,41 +294,3 @@ following to the end of the `body` tag in `index.html`:
 ```
 
 Boom!
-
-## Roadmap
-
-This is a project that is not broad in scope, so there's not really much of a
-wish list here. But I would like to see a couple of things:
-
-I'd like it to be a little simpler. I want this to be a universal starting
-point. If someone is starting a new AngularJS project, she should be able to
-clone, merge, or download its source and immediately start doing what she needs
-without renaming a bunch of files and methods or deleting spare parts. What I
-have works for a first release, but I just think there is a little too much here
-right now.
-
-I'd also like to see a simple generator. Nothing like Yeoman, as there already
-is one of those, but just something that allows the user to say "I want
-Bootstrap but not Font Awesome and my app is called 'coolApp'. Gimme." Perhaps a
-custom download builder like UI Bootstrap has. Like that. Then again, perhaps
-some Yeoman generators wouldn't be out of line. I don't know. What do you think?
-
-Naturally, I am open to all manner of ideas and suggestions. See the
-"Contributing" section below.
-
-### To Do
-
-See the [issues list](http://github.com/joshdmiller/ng-boilerplate/issues). And
-feel free to submit your own!
-
-### Contributing
-
-This is an opinionated kickstarter, but the opinions are fluid and
-evidence-based. Don't like the way I did something? Think you know of a better
-way? Have an idea to make this more useful? Let me know! You can contact me
-through all the usual channels or you can open an issue on the GitHub page. If
-you're feeling ambitious, you can even submit a pull request - how thoughtful
-of you!
-
-So join the team! We're good people.
-

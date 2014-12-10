@@ -13,7 +13,7 @@ flask_instance = _flask = flask.Flask(
 	__name__,
 	static_folder=env.settings('FLASK_STATIC_FOLDER'),
 	template_folder=env.settings('FLASK_TEMPLATE_FOLDER'),
-	static_url_path='/assets'
+	static_url_path=''
 )
 flask_instance.config.from_object('server.config.flask_commons')
 flask_instance.config.from_object(env.settings('FLASK_CONFIG_OBJECT'))
@@ -31,7 +31,8 @@ from domain import *
 # Create database tables
 db.create_all()
 
-# TODO: Remove this to another place?
+# Define the main route (the web client)
 @_flask.route('/')
 def root():
-	return flask.render_template('index.html')
+	return _flask.send_static_file('index.html')
+	#return flask.render_template('index.html')

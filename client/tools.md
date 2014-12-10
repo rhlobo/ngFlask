@@ -167,12 +167,12 @@ web projects, like Twitter Bootstrap and its AngularJS counterpart Angular
 Bootstrap. Bower allows us to say that our app depends in some way on these
 other libraries so that we can manage all of them in one simple place.
 
-`ngBoilerplate` comes with a `bower.json` file that looks something like this:
+The initial `bower.json` file looks something like this:
 
 ```js
 {
-  "name": "ng-boilerplate",
-  "version": "0.2.0-SNAPSHOT",
+  "name": "angular_flask_boilerplate",
+  "version": "0.1",
   "devDependencies": {
     "angular": "~1.0.7",
     "angular-mocks": "~1.0.7",

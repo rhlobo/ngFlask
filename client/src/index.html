@@ -3,13 +3,6 @@
   <head>
     <title ng-bind="pageTitle"></title>
 
-    <!-- social media tags -->
-    <meta property="og:title" content="ngBoilerplate" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://bit.ly/ngBoilerplate" />
-    <meta property="og:image" content="https://a248.e.akamai.net/assets.github.com/images/modules/logos_page/Octocat.png?1366128846" />
-    <meta property="og:description" content="Non-Trivial AngularJS Made Easy: Everything you need to kickstart AngularJS projects: a best-practice directory structure, an intelligent build system, and the best web design libraries around.">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- font awesome from BootstrapCDN -->
@@ -21,12 +14,9 @@
     <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
     <script type="text/javascript" src="<%= file %>"></script><% }); %>
 
-    <!-- it's stupid to have to load it here, but this is for the +1 button -->
-    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
-      { "parsetags": "explicit" }
-    </script>
   </head>
   <body>
+
     <div class="container">
       <div class="navbar navbar-default">
         <div class="navbar-header">
@@ -38,12 +28,7 @@
             <span class="icon-bar"></span>
           </button>
           <div class="navbar-brand">
-            ngbp
-            <small>
-              <a href="http://github.com/ngbp/ngbp/blob/v<%= version %>-release/CHANGELOG.md">
-                v<%= version %>
-              </a>
-            </small>
+            app
           </div>
         </div>
         <div class="collapse navbar-collapse" collapse="menuCollapsed">
@@ -60,24 +45,6 @@
                 What is it?
               </a>
             </li>
-            <li>
-              <a href="https://github.com/ngbp/ngbp#readme">
-                <i class="fa fa-book"></i>
-                Read the Docs
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/ngbp/ngbp">
-                <i class="fa fa-github-alt"></i>
-                Github
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/ngbp/ngbp/issues">
-                <i class="fa fa-comments"></i>
-                Support
-              </a>
-            </li>
           </ul>
         </div>
       </div>
@@ -87,10 +54,9 @@
 
     <footer class="footer">
       <div class="container">
-        <div class="footer-inner">
-
-        </div>
+        <div class="footer-inner" />
       </div>
     </footer>
+
   </body>
 </html>
