@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 
 
+import sys
 import flask.ext.migrate
 import flask.ext.script
 
+import server.config.env as env
 import server.app as server
 
 
@@ -11,10 +13,17 @@ instance = server.flask_instance
 manager = flask.ext.script.Manager(instance)
 manager.add_command('db', flask.ext.migrate.MigrateCommand)
 
+
 @manager.command
-def dev():
-	print 'Starting development environment...'
+def run():
+	mode = env.settings('ENVIRONMENT')
+	if not mode:
+		print 'Environment not defined correctly.'
+		sys.exit(1)
+
+	print 'Running in %s mode' % mode
 	server.flask_instance.run()
+
 
 # TODO: create function to start staging env
 # TODO: create function to start production env

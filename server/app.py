@@ -4,27 +4,32 @@ import flask.ext.sqlalchemy
 import flask.ext.migrate
 import flask.ext.script
 
+import config.env as env
 
-# TODO: Set static_folder
-# TODO: The template_folder is environment dependent:
-# DEVELOPMNET, CLIENT TESTING => client/build
-# PRODUCTION, STAGING => client/bin
-flask_instance = _flask = flask.Flask(__name__, template_folder='../client/bin')
-flask_instance.config.from_object('server.config.settings')
-flask_instance.config.from_envvar('APP_SETTINGS', silent=True)
 
+# INITIALIZING FLASK
+# TODO: Set template_folder
+flask_instance = _flask = flask.Flask(
+	__name__,
+	static_folder=env.settings('FLASK_STATIC_FOLDER'),
+	template_folder=env.settings('FLASK_TEMPLATE_FOLDER'),
+	static_url_path='/assets'
+)
+flask_instance.config.from_object('server.config.flask_commons')
+flask_instance.config.from_object(env.settings('FLASK_CONFIG_OBJECT'))
+
+# INITIALIZING EXTENSIONS AND SERVICES
 db = flask.ext.sqlalchemy.SQLAlchemy(_flask)
 db_migrate = flask.ext.migrate.Migrate(_flask, db, directory='config/migrations')
 api_manager = flask.ext.restless.APIManager(_flask, flask_sqlalchemy_db=db)
 script_manager = flask.ext.script.Manager(_flask)
 
-
-# IMPORTS DOMAIN
+# IMPORTING DOMAIN MODULES
 from domain import *
 
-# Create the database tables
+# SETTING THE APPLICATION UP
+# Create database tables
 db.create_all()
-
 
 # TODO: Remove this to another place?
 @_flask.route('/')
