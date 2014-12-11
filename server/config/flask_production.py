@@ -8,7 +8,6 @@ def _random_string(length):
 
 
 # FLASK
-DEBUG = False
 HOST = '0.0.0.0'
 SECRET_KEY = _random_string(18)
 

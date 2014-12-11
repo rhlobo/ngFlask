@@ -1,0 +1,2 @@
+# FLASK
+TESTING = True

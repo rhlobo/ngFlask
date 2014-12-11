@@ -1,6 +1,5 @@
 # FLASK
 DEBUG = True
-PORT = 8811
 HOST = '0.0.0.0'
 SECRET_KEY = 'qwertyuiopasdfghjkl1234567890'
 
