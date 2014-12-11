@@ -2,21 +2,25 @@
 
 ## BOILERPLATE CODE
 x	- Environment variable defining the environment (PRODUCTION / STAGING / DEVELOPMENT / TESTING)
-	- Point flask static_folder and template_folder to client files (build / bin)
-		- according to environment
+x	- Point flask static_folder and template_folder to client files (build / bin)
+x		- according to environment
 
 
 ## Model
-	- Expense
-		- date
-		- time
-		- description
-		- amount
-		- comment(s)
+x	- Expense
+!		- date
+!		- time
+x		- description
+x		- amount
+!		- comment(s)
 
 
 ## Business
-	- Expenses CRUD (user can see, edit and delete expenses).
+	- Expenses CRUD
+		- create
+		- list
+		- edit
+		- delete
 	- User can filter expense list.
 	- Report (printing):
 		- expenses per week
@@ -35,9 +39,11 @@ x	- Environment variable defining the environment (PRODUCTION / STAGING / DEVELO
 
 
 ## Requisites
-	- Single Page Web App
+x	- Single Page Web App
 	- Minimal UI/UX design
-	- REST API (all user actions via the API, including auth)
+x	- REST API
+x		- all user actions via the API
+		- auth
 
 
 ## Documentation
@@ -50,7 +56,8 @@ x	- Environment variable defining the environment (PRODUCTION / STAGING / DEVELO
 		- Installation
 		- Compiling
 		- Testing
-	- Clean up the ngbp README
+	- REST API
+x	- Clean up the ngbp README
 
 
 ## Business Bonus
