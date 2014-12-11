@@ -1,7 +1,7 @@
 {
   "author": "Roberto Haddock Lobo",
   "name": "angular_flask_boilerplate",
-  "version": "0.1",
+  "version": "0.1.0",
   "homepage": "https://github.com/rhlobo/angular_flask_boilerplate",
   "licenses": {
     "type": "MIT",

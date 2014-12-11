@@ -14,7 +14,6 @@ src/
   |  |- app.spec.js
   |- assets/
   |- common/
-  |  |- plusOne/
   |- less/
   |  |- main.less
   |  |- variables.less
