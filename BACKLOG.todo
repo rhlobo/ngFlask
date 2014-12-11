@@ -1,7 +1,7 @@
 #### BACKLOG
 
 ## BOILERPLATE CODE
-	- Environment variable defining the environment (PRODUCTION / STAGING / DEVELOPMENT / TESTING)
+x	- Environment variable defining the environment (PRODUCTION / STAGING / DEVELOPMENT / TESTING)
 	- Point flask static_folder and template_folder to client files (build / bin)
 		- according to environment
 
