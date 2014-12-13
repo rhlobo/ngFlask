@@ -15,4 +15,4 @@ class Expense(db.Model):
     comment = db.Column(db.Unicode)
 
 
-blueprint = api_manager.create_api(Expense, methods=['GET', 'POST', 'PUT', 'PATCH', 'DELETE'])
+api_manager.create_api(Expense, methods=['GET', 'POST', 'PUT', 'PATCH', 'DELETE'], results_per_page=-1);

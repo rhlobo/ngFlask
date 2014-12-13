@@ -5,6 +5,8 @@ import flask.ext.migrate
 import flask.ext.script
 
 import config.env as env
+#import config.restless
+#config.restless.configure()
 
 
 # INITIALIZING FLASK

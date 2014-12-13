@@ -8,5 +8,8 @@
     "angular-bootstrap": "~0.10.0",
     "angular-ui-router": "~0.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "ng-table": "~0.3.3",
+    "angular-resource": "1.2"
+  }
 }

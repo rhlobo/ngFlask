@@ -1,21 +1,26 @@
-var app = angular.module( 'ngBoilerplate', [
-  'templates-app',
-  'templates-common',
-  'ngBoilerplate.home',
-  'ngBoilerplate.about',
-  'ui.router'
-]);
+(function(){
 
-app.config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
-  $urlRouterProvider.otherwise( '/home' );
-});
+  var app = angular.module( 'ngBoilerplate', [
+    'templates-app',
+    'templates-common',
+    'ngBoilerplate.home',
+    'ngBoilerplate.expenses',
+    'ngBoilerplate.about',
+    'ui.router'
+  ]);
 
-app.run( function run () {});
-
-app.controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {
-  $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
-    if ( angular.isDefined( toState.data.pageTitle ) ) {
-      $scope.pageTitle = toState.data.pageTitle;
-    }
+  app.config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
+    $urlRouterProvider.otherwise( '/home' );
   });
-});
+
+  app.run( function run () {});
+
+  app.controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {
+    $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
+      if ( angular.isDefined( toState.data.pageTitle ) ) {
+        $scope.pageTitle = toState.data.pageTitle;
+      }
+    });
+  });
+
+})();
