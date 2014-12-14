@@ -1,12 +1,13 @@
 (function(){
 
   var app = angular.module( 'ngBoilerplate', [
+    'ui.router',
     'templates-app',
     'templates-common',
     'ngBoilerplate.home',
     'ngBoilerplate.expenses',
     'ngBoilerplate.about',
-    'ui.router'
+    'app.menu'
   ]);
 
   app.config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {

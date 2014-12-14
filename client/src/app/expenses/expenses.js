@@ -2,7 +2,8 @@
 
   var app = angular.module( 'ngBoilerplate.expenses', [
     'ui.router',
-    'restlessResource'
+    'restlessResource',
+    'ngTable'
   ]);
 
   app.config(function config( $stateProvider ) {
