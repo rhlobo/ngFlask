@@ -240,9 +240,15 @@ angular.module('restlessResource', ['ng']).
               break;
             }
           case 1:
-            if (isFunction(a1)) success = a1;
-            else if (hasBody) data = a1;
-            else params = a1;
+            if (isFunction(a1)) {
+              success = a1;
+            }
+            else if (hasBody) {
+              data = a1;
+            }
+            else {
+              params = a1;
+            }
             break;
           case 0: break;
           default:
@@ -250,7 +256,6 @@ angular.module('restlessResource', ['ng']).
               "Expected up to 4 arguments [params, data, success, error], got {0} arguments",
               arguments.length);
           }
-          /* jshint +W086 */ /* (purposefully fall through case statements) */
 
           var isInstanceCall = this instanceof Resource;
           var value = isInstanceCall ? data : (action.isArray ? [] : new Resource(data));
@@ -266,7 +271,9 @@ angular.module('restlessResource', ['ng']).
             }
           });
 
-          if (hasBody) httpConfig.data = data;
+          if (hasBody) {
+            httpConfig.data = data;
+          }
           route.setUrlParams(httpConfig,
                              extend({}, extractParams(data, action.params || {}), params),
                              action.url);
@@ -276,6 +283,9 @@ angular.module('restlessResource', ['ng']).
               promise = value.$promise;
 
             if (data) {
+              if (!!action.isArray) {
+                data = data.objects;
+              }
               // Need to convert action.isArray to boolean in case it is undefined
               // jshint -W018
               if (angular.isArray(data) !== (!!action.isArray)) {
@@ -285,7 +295,6 @@ angular.module('restlessResource', ['ng']).
                   action.isArray ? 'array' : 'object',
                   angular.isArray(data) ? 'array' : 'object');
               }
-              // jshint +W018
               if (action.isArray) {
                 value.length = 0;
                 forEach(data, function (item) {

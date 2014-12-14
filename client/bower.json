@@ -9,7 +9,6 @@
     "angular-ui-router": "~0.2"
   },
   "dependencies": {
-    "ng-table": "~0.3.3",
-    "angular-resource": "1.2"
+    "ng-table": "~0.3.3"
   }
 }
