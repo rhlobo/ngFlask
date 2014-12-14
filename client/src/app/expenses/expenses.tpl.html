@@ -13,6 +13,8 @@
             <tr>
                 <th style="min-width: 80px;">Description</th>
                 <th style="min-width: 80px;">Amount</th>
+                <th style="min-width: 80px;">Date</th>
+                <th style="min-width: 80px;">Time</th>
                 <th style="width:20px;"> </th>
                 <th style="width:20px;"> </th>
             </tr>
@@ -21,6 +23,8 @@
             <tr ng-repeat="expense in expenses">
                 <td>{{ expense.description }}</td>
                 <td>{{ expense.amount }}</td>
+                <td>{{ expense.date_time | date:'yyyy-MM-dd' }}</td>
+                <td>{{ expense.date_time | date:'HH:mm:ss (Z)' }}</td>
                 <td><a ng-click="editExpense(expense.id)" class="btn btn-small btn-primary">edit</a></td>
                 <td><a ng-click="deleteExpense(expense.id)" class="btn btn-small btn-danger">delete</a></td>
             </tr>
