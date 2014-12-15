@@ -1,15 +1,16 @@
 <div class="row">
 
     <h1 class="page-header">
-      Expenses
-      <small>Listing</small>
+        Expenses
+        <small>Listing</small>
+
+        <button ng-click="createExpense()" class="btn btn-primary pull-right">New expense</button>
     </h1>
 
-    <button ng-click="createExpense()" class="btn">New expense</button>
 
-    <div class="span6">
-        <table ng-table="tableParams" show-filter="true" class="table">
-            <tr ng-repeat="expense in $data">
+    <div class="span6" ng-show="expenses.length">
+        <table ng-table="tableParams" show-filter="true" class="table ng-table-rowselected">
+            <tr ng-repeat="expense in $data" ng-click="changeSelection(expense)" ng-class="{'active': expense.$selected}">
                 <td data-title="'Description'" sortable="'description'" filter="{ 'description': 'text' }">{{ expense.description }}</td>
                 <td data-title="'Amount'" sortable="'amount'">{{ expense.amount }}</td>
                 <td data-title="'Date'" sortable="'date_time'">{{ expense.date_time | date:'yyyy-MM-dd' }}</td>
@@ -18,6 +19,9 @@
                 <td><a ng-click="deleteExpense(expense)" class="btn btn-small btn-danger">delete</a></td>
             </tr>
         </table>
+    </div>
 
+    <div class="span6" ng-hide="expenses.length">
+        Sorry, no expenses here.
     </div>
 </div>
