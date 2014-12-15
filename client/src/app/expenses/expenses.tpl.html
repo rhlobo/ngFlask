@@ -8,27 +8,16 @@
     <button ng-click="createExpense()" class="btn">New expense</button>
 
     <div class="span6">
-        <table ng-table>
-            <thead>
-            <tr>
-                <th style="min-width: 80px;">Description</th>
-                <th style="min-width: 80px;">Amount</th>
-                <th style="min-width: 80px;">Date</th>
-                <th style="min-width: 80px;">Time</th>
-                <th style="width:20px;"> </th>
-                <th style="width:20px;"> </th>
+        <table ng-table="tableParams" show-filter="true" class="table">
+            <tr ng-repeat="expense in $data">
+                <td data-title="'Description'" sortable="'description'" filter="{ 'description': 'text' }">{{ expense.description }}</td>
+                <td data-title="'Amount'" sortable="'amount'">{{ expense.amount }}</td>
+                <td data-title="'Date'" sortable="'date_time'">{{ expense.date_time | date:'yyyy-MM-dd' }}</td>
+                <td data-title="'Time'" sortable="'date_time'">{{ expense.date_time | date:'HH:mm:ss (Z)' }}</td>
+                <td><a ng-click="editExpense(expense)" class="btn btn-small btn-primary">edit</a></td>
+                <td><a ng-click="deleteExpense(expense)" class="btn btn-small btn-danger">delete</a></td>
             </tr>
-            </thead>
-            <tbody>
-            <tr ng-repeat="expense in expenses">
-                <td>{{ expense.description }}</td>
-                <td>{{ expense.amount }}</td>
-                <td>{{ expense.date_time | date:'yyyy-MM-dd' }}</td>
-                <td>{{ expense.date_time | date:'HH:mm:ss (Z)' }}</td>
-                <td><a ng-click="editExpense(expense.id)" class="btn btn-small btn-primary">edit</a></td>
-                <td><a ng-click="deleteExpense(expense.id)" class="btn btn-small btn-danger">delete</a></td>
-            </tr>
-            </tbody>
         </table>
+
     </div>
 </div>

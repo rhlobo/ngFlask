@@ -8,11 +8,11 @@ x		- according to environment
 
 ## Model
 x	- Expense
-!		- date
-!		- time
+x		- date
+x		- time
 x		- description
 x		- amount
-!		- comment(s)
+x		- comment
 
 
 ## Business
@@ -21,7 +21,7 @@ x		- amount
 x		- list
 		- edit
 		- delete
-	- User can filter expense list.
+x	- User can filter expense list.
 	- Report (printing):
 		- expenses per week
 		- average per day in week
@@ -40,7 +40,7 @@ x		- list
 
 ## Requisites
 x	- Single Page Web App
-	- Minimal UI/UX design
+x	- Minimal UI/UX design
 x	- REST API
 x		- all user actions via the API
 		- auth
