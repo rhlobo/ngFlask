@@ -5,7 +5,9 @@
   ]);
 
   app.factory('ExpenseService', ['$resource', function($resource){
-    return $resource('/api/expense/:id', { id: '@id' });
+    return $resource('/api/expense/:id', { id: '@id' }, {
+      update: { method:'PUT' }
+    });
   }]);
 
 })();

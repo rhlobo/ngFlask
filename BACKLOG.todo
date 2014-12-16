@@ -20,7 +20,7 @@ x		- comment
 		- create
 x		- list
 		- edit
-		- delete
+x		- delete
 x	- User can filter expense list.
 	- Report (printing):
 		- expenses per week
@@ -66,7 +66,7 @@ x	- Clean up the ngbp README
 
 
 ## Other bonus
-	- Responsive (present it first as a mobile app)
+-	- Responsive (present it first as a mobile app)
 	- Docker container serving the app (using Nging + static cache / uWSGI)
 	- manage.py script with commands:
 	    - Run server / client in development mode
@@ -81,5 +81,5 @@ x	- Clean up the ngbp README
 	- api client general help
 	- Confirmation e-mail
 	- Forgot password
-	-? Keyboard navigation (navigation, selection, edition)
-	-? Search expense
+-	-? Keyboard navigation (navigation, selection, edition)
+-	-? Search expense

@@ -1,44 +1,37 @@
 <div class="form-group">
-  <label for="title" class="col-sm-2 control-label">Title</label>
+  <label for="description" class="col-sm-2 control-label">Description</label>
   <div class="col-sm-10">
-    <input type="text" ng-model="movie.title" class="form-control" id="title" placeholder="Movie Title Here"/>
+    <input type="text" ng-model="expense.description" class="form-control" id="description" placeholder="Expense description here"/>
   </div>
 </div>
 <div class="form-group">
-  <label for="year" class="col-sm-2 control-label">Release Year</label>
+  <label for="amount" class="col-sm-2 control-label">Amount</label>
   <div class="col-sm-10">
-    <input type="text" ng-model="movie.releaseYear" class="form-control" id="year" placeholder="When was the movie released?"/>
+    <input type="text" ng-model="expense.amount" class="form-control" id="amount" placeholder="$"/>
   </div>
 </div>
 <div class="form-group">
-  <label for="director" class="col-sm-2 control-label">Director</label>
+  <label for="comment" class="col-sm-2 control-label">Comment</label>
   <div class="col-sm-10">
-    <input type="text" ng-model="movie.director" class="form-control" id="director" placeholder="Who directed the movie?"/>
+    <input type="text" ng-model="expense.comment" class="form-control" id="comment" placeholder="Any comments about the expense?"/>
   </div>
 </div>
 <div class="form-group">
-  <label for="plot" class="col-sm-2 control-label">Movie Genre</label>
+  <label for="date_time" class="col-sm-2 control-label">Date and time</label>
   <div class="col-sm-10">
-    <input type="text" ng-model="movie.genre" class="form-control" id="plot" placeholder="Movie genre here"/>
+    <div class="dropdown">
+      <a class="dropdown-toggle" id="dropdown" role="button" data-toggle="dropdown" data-target="#" href="#">
+        <div class="input-group"><input type="text" class="form-control" data-ng-model="expense.date_time"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+        </div>
+      </a>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+        <datetimepicker data-ng-model="expense.date_time" data-datetimepicker-config="{ dropdownSelector: '#dropdown' }"/>
+      </ul>
+    </div>
   </div>
 </div>
 <div class="form-group">
   <div class="col-sm-offset-2 col-sm-10">
     <input type="submit" class="btn btn-primary" value="Save"/>
   </div>
-</div>
-
-    <div class="span6">
-        <table ng-table="tableParams" show-filter="true" class="table">
-            <tr ng-repeat="expense in $data">
-                <td data-title="'Description'" sortable="'description'" filter="{ 'description': 'text' }">{{ expense.description }}</td>
-                <td data-title="'Amount'" sortable="'amount'">{{ expense.amount }}</td>
-                <td data-title="'Date'" sortable="'date_time'">{{ expense.date_time | date:'yyyy-MM-dd' }}</td>
-                <td data-title="'Time'" sortable="'date_time'">{{ expense.date_time | date:'HH:mm:ss (Z)' }}</td>
-                <td><a ng-click="editExpense(expense.id)" class="btn btn-small btn-primary">edit</a></td>
-                <td><a ng-click="deleteExpense(expense)" class="btn btn-small btn-danger">delete</a></td>
-            </tr>
-        </table>
-
-    </div>
 </div>

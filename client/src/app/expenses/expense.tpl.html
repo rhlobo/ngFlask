@@ -1,0 +1,15 @@
+<div class="row">
+
+    <h1 class="page-header">
+        Expenses
+        <small>Creation</small>
+
+        <button ng-click="listExpenses()" class="btn pull-right">Expense listing</button>
+    </h1>
+
+    <div class="span6">
+        <form class="form-horizontal" role="form" ng-submit="saveExpense(expense)">
+            <ng-include src="'expenses/_form.tpl.html'"></ng-include>
+        </form>
+    </div>
+</div>

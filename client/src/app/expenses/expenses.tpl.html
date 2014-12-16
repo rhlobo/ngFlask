@@ -7,7 +7,6 @@
         <button ng-click="createExpense()" class="btn btn-primary pull-right">New expense</button>
     </h1>
 
-
     <div class="span6" ng-show="expenses.length">
         <table ng-table="tableParams" show-filter="true" class="table ng-table-rowselected">
             <tr ng-repeat="expense in $data" ng-click="changeSelection(expense)" ng-class="{'active': expense.$selected}">
@@ -20,8 +19,14 @@
             </tr>
         </table>
     </div>
+    <div class="span3" ng-show="expenses.length">
+    </div>
+
 
     <div class="span6" ng-hide="expenses.length">
-        Sorry, no expenses here.
+        <div class="hero-unit">
+            <h3>Nothing here =(</h3>
+            You may <a ng-click="createExpense()">create new expenses</a> as you wish
+        </div>
     </div>
 </div>

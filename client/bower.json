@@ -9,6 +9,7 @@
     "angular-ui-router": "~0.2"
   },
   "dependencies": {
-    "ng-table": "~0.3.3"
+    "ng-table": "~0.3.3",
+    "angular-bootstrap-datetimepicker": "~0.3.7"
   }
 }
