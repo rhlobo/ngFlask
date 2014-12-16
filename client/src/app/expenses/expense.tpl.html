@@ -7,7 +7,7 @@
         <button ng-click="listExpenses()" class="btn pull-right">Expense listing</button>
     </h1>
 
-    <div class="span6">
+    <div class="span6 expense-form">
         <form class="form-horizontal" role="form" ng-submit="saveExpense(expense)">
             <ng-include src="'expenses/_form.tpl.html'"></ng-include>
         </form>

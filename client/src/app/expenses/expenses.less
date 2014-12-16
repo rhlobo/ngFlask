@@ -1,10 +1,23 @@
 
-expense-list {
-	.ng-table {
-	    border: 1px solid #000;
+.expense-form {
+	.ng-valid.ng-dirty {
+		border-color: green;
+	}
+	.ng-invalid.ng-dirty {
+		border-color: red;
+	}
+}
 
+.expense-list {
+	.ng-table {
 	    .ng-table-rowselected tr {
 		    cursor: pointer;
+		}
+		.comment {
+			max-width: 100px;
+		    white-space: nowrap;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
 		}
 	}
 }
