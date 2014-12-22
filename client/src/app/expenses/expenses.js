@@ -1,6 +1,6 @@
 (function(){
 
-  var app = angular.module( 'ngBoilerplate.expenses', [
+  var app = angular.module( 'app.expenses', [
     'app.expenses.service',
     'app.expenses.create',
     'ui.router',

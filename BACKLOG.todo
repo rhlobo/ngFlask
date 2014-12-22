@@ -16,10 +16,10 @@ x		- comment
 
 
 ## Business
-	- Expenses CRUD
-		- create
+x	- Expenses CRUD
+x		- create
 x		- list
-		- edit
+x		- edit
 x		- delete
 x	- User can filter expense list.
 	- Report (printing):

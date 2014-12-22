@@ -1,6 +1,6 @@
 import datetime
 
-from server.app import db, api_manager
+from server.app import db, api_manager, flask_instance
 
 
 def _get_date():

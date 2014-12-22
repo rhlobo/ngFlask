@@ -1,12 +1,12 @@
 (function(){
 
-  var app = angular.module( 'ngBoilerplate', [
+  var app = angular.module( 'app', [
     'ui.router',
     'templates-app',
     'templates-common',
-    'ngBoilerplate.home',
-    'ngBoilerplate.expenses',
-    'ngBoilerplate.about',
+    'app.home',
+    'app.expenses',
+    'app.about',
     'app.menu'
   ]);
 
