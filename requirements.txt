@@ -1,3 +1,4 @@
+sh
 flask
 flask-script
 flask-restless

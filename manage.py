@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 
 
+import sh
 import sys
 import flask.ext.migrate
 import flask.ext.script
 
-import server.config.env as env
 import server.app as server
+import wsgi
 
 
 instance = server.flask_instance
@@ -16,13 +17,20 @@ manager.add_command('db', flask.ext.migrate.MigrateCommand)
 
 @manager.command
 def run():
-	mode = env.settings('ENVIRONMENT')
-	if not mode:
-		print 'Environment not defined correctly.'
-		sys.exit(1)
+	wsgi.run()
 
-	print 'Running in %s mode' % mode
-	server.flask_instance.run()
+
+@manager.command
+def docker_build():
+    sh.docker.build('-t', 'webapp', '.', _out=sys.stdout)
+
+
+@manager.command
+def docker_run(environment):
+    sh.docker.run('-d',
+                  '-e', 'ENVIRONMENT=%s' % environment,
+                  '-p', '127.0.0.1:80:80',
+                  'webapp')
 
 
 # TODO: create function to start staging env

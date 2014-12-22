@@ -83,3 +83,24 @@ x	- Clean up the ngbp README
 	- Forgot password
 -	-? Keyboard navigation (navigation, selection, edition)
 -	-? Search expense
+
+
+Model:
+	☐	Task
+		☐	Reference
+		☐	Tags, Groups
+		☐	ProductRef
+		☐	Added
+	☐	Product
+		☐	Name
+		☐	Refs
+			☐	StoreRef
+			☐	URL
+		☐	Barcode
+		☐	Description
+	☐	Store
+		☐	Name
+
+
+
+
