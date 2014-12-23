@@ -1,0 +1,29 @@
+machine:
+  services:
+    - docker
+
+
+dependencies:
+  cache_directories:
+    - "~/docker"
+  override:
+    - docker info
+    - if [[ -e ~/docker/ngFlask.tar ]]; then docker load --input ~/docker/ngFlask.tar; fi
+    - pip install -r requirements.txt
+    - docker build -t rhlobo/ngFlask .
+    - mkdir -p ~/docker; docker save rhlobo/ngFlask > ~/docker/ngFlask.tar;
+
+
+test:
+  override:
+    - ./test.sh
+
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push rhlobo/ngFlask:latest
+      - docker tag rhlobo/ngFlask:latest rhlobo/ngFlask:$CIRCLE_SHA1
+      - docker push rhlobo/ngFlask:$CIRCLE_SHA1
