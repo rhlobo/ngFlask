@@ -67,15 +67,18 @@ x	- Clean up the ngbp README
 
 ## Other bonus
 -	- Responsive (present it first as a mobile app)
-	- Docker container serving the app (using Nging + static cache / uWSGI)
+	- Docker
+		✔	container serving the app @done (14-12-22 21:49)
+		✔	using Nging + WSGI @done (14-12-22 21:49)
+		☐	static cache
 	- manage.py script with commands:
-	    - Run server / client in development mode
-	    - Prepare the database
-	    - Create test data
-	    - Create inittial data
-	    - Reset the database
-	    - CRUD on databse
-	    - Backup data?
+	     ☐	Run server / client in development mode
+	     ☐	Prepare the database
+	     ☐	Create test data
+	     ☐	Create inittial data
+	     ☐	Reset the database
+	     ☐	CRUD on databse
+	     ☐	Backup data?
 	- api help (displaying auth_key)
 	- api client for python / shell
 	- api client general help
