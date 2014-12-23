@@ -14,9 +14,9 @@ test:
   override:
     - ./test.sh
   post:
-    - if [[ -e ~/docker/ngFlask.tar ]]; then docker load --input ~/docker/ngFlask.tar; fi
-    - docker build -t rhlobo/ngFlask .
-    - mkdir -p ~/docker; docker save rhlobo/ngFlask > ~/docker/ngFlask.tar;
+    - if [[ -e ~/docker/ngflask.tar ]]; then docker load --input ~/docker/ngflask.tar; fi
+    - docker build -t rhlobo/ngflask .
+    - mkdir -p ~/docker; docker save rhlobo/ngflask > ~/docker/ngflask.tar;
 
 
 deployment:
@@ -24,6 +24,6 @@ deployment:
     branch: master
     commands:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push rhlobo/ngFlask:latest
-      - docker tag rhlobo/ngFlask:latest rhlobo/ngFlask:$CIRCLE_SHA1
-      - docker push rhlobo/ngFlask:$CIRCLE_SHA1
+      - docker push rhlobo/ngflask:latest
+      - docker tag rhlobo/ngflask:latest rhlobo/ngflask:$CIRCLE_SHA1
+      - docker push rhlobo/ngflask:$CIRCLE_SHA1
