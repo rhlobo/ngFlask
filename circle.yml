@@ -7,16 +7,16 @@ dependencies:
   cache_directories:
     - "~/docker"
   override:
-    - docker info
-    - if [[ -e ~/docker/ngFlask.tar ]]; then docker load --input ~/docker/ngFlask.tar; fi
     - pip install -r requirements.txt
-    - docker build -t rhlobo/ngFlask .
-    - mkdir -p ~/docker; docker save rhlobo/ngFlask > ~/docker/ngFlask.tar;
 
 
 test:
   override:
     - ./test.sh
+  post:
+    - if [[ -e ~/docker/ngFlask.tar ]]; then docker load --input ~/docker/ngFlask.tar; fi
+    - docker build -t rhlobo/ngFlask .
+    - mkdir -p ~/docker; docker save rhlobo/ngFlask > ~/docker/ngFlask.tar;
 
 
 deployment:

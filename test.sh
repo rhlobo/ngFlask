@@ -6,8 +6,19 @@ export PROJECT_LOCATION="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 export PYTHONPATH="${PROJECT_LOCATION}"
 
 
-run_tests() {
-	echo "TESTS"
+run_js_tests() {
+	echo "CLIENT TESTS"
+	echo "--------------------------------------------------------------------------------"
+	cd "${PROJECT_LOCATION}/client"
+	npm install
+	bower install
+	grunt
+	cd "${CURRDIR}"
+	echo
+}
+
+run_python_tests() {
+	echo "SERVER TESTS"
 	echo "--------------------------------------------------------------------------------"
 	nosetests --with-coverage --cover-erase --cover-inclusive --cover-branches --cover-package="server" --cover-html --cover-html-dir="../coverage/" -w "server" || return 1
 	echo
@@ -35,7 +46,8 @@ exit_failure() {
 
 
 cd "${PROJECT_LOCATION}"
-run_tests || exit_failure
+run_js_tests || exit_failure
+run_python_tests || exit_failure
 pep8_style_check || exit_failure
 pep8_statistics || exit_failure
 cd "${CURRDIR}"
