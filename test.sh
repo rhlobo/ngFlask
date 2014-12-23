@@ -12,7 +12,7 @@ run_js_tests() {
 	cd "${PROJECT_LOCATION}/client"
 	npm install
 	bower install
-	grunt
+	grunt --force
 	cd "${CURRDIR}"
 	echo
 }
